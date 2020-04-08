@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d2e53dd8-0f8a-4d72-b11b-e5f50ce8a9c9" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1aHAvlGA5jFXgkoxe3skDV1xLtx" />
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d2e53dd8-0f8a-4d72-b11b-e5f50ce8a9c9" name="Default Changelist" comment="" />
+      <created>1586382377263</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586382377263</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1877" height="249" key="GridCell.Tab.0.bottom" timestamp="1586382429375">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="249" key="GridCell.Tab.0.bottom/0.30.1920.1050@0.30.1920.1050" timestamp="1586382429375" />
+    <state width="1877" height="249" key="GridCell.Tab.0.center" timestamp="1586382429374">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="249" key="GridCell.Tab.0.center/0.30.1920.1050@0.30.1920.1050" timestamp="1586382429374" />
+    <state width="1877" height="249" key="GridCell.Tab.0.left" timestamp="1586382429373">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="249" key="GridCell.Tab.0.left/0.30.1920.1050@0.30.1920.1050" timestamp="1586382429373" />
+    <state width="1877" height="249" key="GridCell.Tab.0.right" timestamp="1586382429374">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="249" key="GridCell.Tab.0.right/0.30.1920.1050@0.30.1920.1050" timestamp="1586382429374" />
+  </component>
+</project>
