@@ -42,6 +42,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RunManager">
     <configuration name="PlayGround [tomcat7:run]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
@@ -81,7 +82,7 @@
       <option name="presentableId" value="Default" />
       <updated>1586382377263</updated>
       <workItem from="1586382378439" duration="811000" />
-      <workItem from="1586424323251" duration="4413000" />
+      <workItem from="1586424323251" duration="5197000" />
     </task>
     <servers />
   </component>
@@ -97,22 +98,22 @@
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="414" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1586382876872" />
-    <state width="995" height="246" key="GridCell.Tab.0.bottom" timestamp="1586433630039">
+    <state width="995" height="246" key="GridCell.Tab.0.bottom" timestamp="1586434359362">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state width="995" height="246" key="GridCell.Tab.0.bottom/0.30.1920.1050@0.30.1920.1050" timestamp="1586433630039" />
-    <state width="995" height="246" key="GridCell.Tab.0.center" timestamp="1586433630039">
+    <state width="995" height="246" key="GridCell.Tab.0.bottom/0.30.1920.1050@0.30.1920.1050" timestamp="1586434359362" />
+    <state width="995" height="246" key="GridCell.Tab.0.center" timestamp="1586434359361">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state width="995" height="246" key="GridCell.Tab.0.center/0.30.1920.1050@0.30.1920.1050" timestamp="1586433630039" />
-    <state width="995" height="246" key="GridCell.Tab.0.left" timestamp="1586433630038">
+    <state width="995" height="246" key="GridCell.Tab.0.center/0.30.1920.1050@0.30.1920.1050" timestamp="1586434359361" />
+    <state width="995" height="246" key="GridCell.Tab.0.left" timestamp="1586434359361">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state width="995" height="246" key="GridCell.Tab.0.left/0.30.1920.1050@0.30.1920.1050" timestamp="1586433630038" />
-    <state width="995" height="246" key="GridCell.Tab.0.right" timestamp="1586433630039">
+    <state width="995" height="246" key="GridCell.Tab.0.left/0.30.1920.1050@0.30.1920.1050" timestamp="1586434359361" />
+    <state width="995" height="246" key="GridCell.Tab.0.right" timestamp="1586434359361">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state width="995" height="246" key="GridCell.Tab.0.right/0.30.1920.1050@0.30.1920.1050" timestamp="1586433630039" />
+    <state width="995" height="246" key="GridCell.Tab.0.right/0.30.1920.1050@0.30.1920.1050" timestamp="1586434359361" />
     <state x="1178" y="379" key="com.intellij.ide.util.TipDialog" timestamp="1586424328813">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
