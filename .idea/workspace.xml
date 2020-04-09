@@ -17,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="jsf" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -88,7 +88,7 @@
       <option name="presentableId" value="Default" />
       <updated>1586382377263</updated>
       <workItem from="1586382378439" duration="811000" />
-      <workItem from="1586424323251" duration="7402000" />
+      <workItem from="1586424323251" duration="8821000" />
     </task>
     <servers />
   </component>
@@ -104,22 +104,22 @@
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="414" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1586382876872" />
-    <state width="995" height="246" key="GridCell.Tab.0.bottom" timestamp="1586437379633">
+    <state width="995" height="246" key="GridCell.Tab.0.bottom" timestamp="1586438152473">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state width="995" height="246" key="GridCell.Tab.0.bottom/0.30.1920.1050@0.30.1920.1050" timestamp="1586437379633" />
-    <state width="995" height="246" key="GridCell.Tab.0.center" timestamp="1586437379632">
+    <state width="995" height="246" key="GridCell.Tab.0.bottom/0.30.1920.1050@0.30.1920.1050" timestamp="1586438152473" />
+    <state width="995" height="246" key="GridCell.Tab.0.center" timestamp="1586438152473">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state width="995" height="246" key="GridCell.Tab.0.center/0.30.1920.1050@0.30.1920.1050" timestamp="1586437379632" />
-    <state width="995" height="246" key="GridCell.Tab.0.left" timestamp="1586437379632">
+    <state width="995" height="246" key="GridCell.Tab.0.center/0.30.1920.1050@0.30.1920.1050" timestamp="1586438152473" />
+    <state width="995" height="246" key="GridCell.Tab.0.left" timestamp="1586438152472">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state width="995" height="246" key="GridCell.Tab.0.left/0.30.1920.1050@0.30.1920.1050" timestamp="1586437379632" />
-    <state width="995" height="246" key="GridCell.Tab.0.right" timestamp="1586437379633">
+    <state width="995" height="246" key="GridCell.Tab.0.left/0.30.1920.1050@0.30.1920.1050" timestamp="1586438152472" />
+    <state width="995" height="246" key="GridCell.Tab.0.right" timestamp="1586438152473">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state width="995" height="246" key="GridCell.Tab.0.right/0.30.1920.1050@0.30.1920.1050" timestamp="1586437379633" />
+    <state width="995" height="246" key="GridCell.Tab.0.right/0.30.1920.1050@0.30.1920.1050" timestamp="1586438152473" />
     <state width="995" height="351" key="GridCell.Tab.1.bottom" timestamp="1586437147622">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
@@ -140,10 +140,10 @@
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="1178" y="379" key="com.intellij.ide.util.TipDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1586424328813" />
-    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1586436455204">
+    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1586438889996">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup/0.30.1920.1050@0.30.1920.1050" timestamp="1586436455204" />
+    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup/0.30.1920.1050@0.30.1920.1050" timestamp="1586438889996" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
