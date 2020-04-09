@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d2e53dd8-0f8a-4d72-b11b-e5f50ce8a9c9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +69,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1586382377263</updated>
-      <workItem from="1586382378439" duration="499000" />
+      <workItem from="1586382378439" duration="811000" />
+      <workItem from="1586424323251" duration="1229000" />
     </task>
     <servers />
   </component>
@@ -97,6 +98,10 @@
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state width="831" height="249" key="GridCell.Tab.0.right/0.30.1920.1050@0.30.1920.1050" timestamp="1586382918470" />
+    <state x="1178" y="379" key="com.intellij.ide.util.TipDialog" timestamp="1586424328813">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state x="1178" y="379" key="com.intellij.ide.util.TipDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1586424328813" />
     <state x="623" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1586382902830">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
