@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d2e53dd8-0f8a-4d72-b11b-e5f50ce8a9c9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2020-04-09" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/logs/access_log.2020-04-09" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/test/org/apache/jsp/index_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/test/org/apache/jsp/index_jsp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +81,7 @@
       <option name="presentableId" value="Default" />
       <updated>1586382377263</updated>
       <workItem from="1586382378439" duration="811000" />
-      <workItem from="1586424323251" duration="3469000" />
+      <workItem from="1586424323251" duration="4413000" />
     </task>
     <servers />
   </component>
@@ -100,29 +97,29 @@
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="414" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1586382876872" />
-    <state width="995" height="246" key="GridCell.Tab.0.bottom" timestamp="1586432303270">
+    <state width="995" height="246" key="GridCell.Tab.0.bottom" timestamp="1586433630039">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state width="995" height="246" key="GridCell.Tab.0.bottom/0.30.1920.1050@0.30.1920.1050" timestamp="1586432303270" />
-    <state width="995" height="246" key="GridCell.Tab.0.center" timestamp="1586432303270">
+    <state width="995" height="246" key="GridCell.Tab.0.bottom/0.30.1920.1050@0.30.1920.1050" timestamp="1586433630039" />
+    <state width="995" height="246" key="GridCell.Tab.0.center" timestamp="1586433630039">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state width="995" height="246" key="GridCell.Tab.0.center/0.30.1920.1050@0.30.1920.1050" timestamp="1586432303270" />
-    <state width="995" height="246" key="GridCell.Tab.0.left" timestamp="1586432303270">
+    <state width="995" height="246" key="GridCell.Tab.0.center/0.30.1920.1050@0.30.1920.1050" timestamp="1586433630039" />
+    <state width="995" height="246" key="GridCell.Tab.0.left" timestamp="1586433630038">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state width="995" height="246" key="GridCell.Tab.0.left/0.30.1920.1050@0.30.1920.1050" timestamp="1586432303270" />
-    <state width="995" height="246" key="GridCell.Tab.0.right" timestamp="1586432303270">
+    <state width="995" height="246" key="GridCell.Tab.0.left/0.30.1920.1050@0.30.1920.1050" timestamp="1586433630038" />
+    <state width="995" height="246" key="GridCell.Tab.0.right" timestamp="1586433630039">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state width="995" height="246" key="GridCell.Tab.0.right/0.30.1920.1050@0.30.1920.1050" timestamp="1586432303270" />
+    <state width="995" height="246" key="GridCell.Tab.0.right/0.30.1920.1050@0.30.1920.1050" timestamp="1586433630039" />
     <state x="1178" y="379" key="com.intellij.ide.util.TipDialog" timestamp="1586424328813">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="1178" y="379" key="com.intellij.ide.util.TipDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1586424328813" />
-    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1586432780478">
+    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1586433571683">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup/0.30.1920.1050@0.30.1920.1050" timestamp="1586432780478" />
+    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup/0.30.1920.1050@0.30.1920.1050" timestamp="1586433571683" />
   </component>
 </project>
