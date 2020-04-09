@@ -103,3 +103,9 @@
 127.0.0.1 - - [09/Apr/2020:15:26:55 +0200] "GET /test/rest/ HTTP/1.1" 404 967 http-bio-8080-exec-3 4
 127.0.0.1 - - [09/Apr/2020:15:26:59 +0200] "GET /test/ HTTP/1.1" 200 119 http-bio-8080-exec-4 15
 127.0.0.1 - - [09/Apr/2020:15:27:03 +0200] "GET /test/rest/hello HTTP/1.1" 200 21 http-bio-8080-exec-5 1
+127.0.0.1 - - [09/Apr/2020:17:39:29 +0200] "GET /test/ HTTP/1.1" 200 119 http-bio-8080-exec-1 311
+127.0.0.1 - - [09/Apr/2020:17:40:45 +0200] "GET /test/rest/hello/ HTTP/1.1" 200 21 http-bio-8080-exec-3 14
+0:0:0:0:0:0:0:1 - - [09/Apr/2020:17:40:51 +0200] "GET /test/rest/hello/ HTTP/1.1" 200 21 http-bio-8080-exec-5 2
+127.0.0.1 - - [09/Apr/2020:17:42:54 +0200] "GET /test/rest/hello/ HTTP/1.1" 200 21 http-bio-8080-exec-1 36
+127.0.0.1 - - [09/Apr/2020:17:42:56 +0200] "GET /test/rest/hello/ HTTP/1.1" 200 21 http-bio-8080-exec-2 2
+0:0:0:0:0:0:0:1 - - [09/Apr/2020:17:43:01 +0200] "GET /test/rest/hello/ HTTP/1.1" 200 21 http-bio-8080-exec-4 1
