@@ -21,3 +21,7 @@
 0:0:0:0:0:0:0:1 - - [10/Apr/2020:08:50:28 +0200] "GET /test/ HTTP/1.1" 200 119 http-bio-8080-exec-9 317
 0:0:0:0:0:0:0:1 - - [10/Apr/2020:08:50:37 +0200] "GET /test/rest/ HTTP/1.1" 200 21 http-bio-8080-exec-9 4
 0:0:0:0:0:0:0:1 - - [10/Apr/2020:08:50:45 +0200] "GET /test/rest/developers HTTP/1.1" 200 22 http-bio-8080-exec-9 2
+0:0:0:0:0:0:0:1 - - [10/Apr/2020:10:21:36 +0200] "GET /test/ HTTP/1.1" 200 119 http-bio-8080-exec-1 43
+0:0:0:0:0:0:0:1 - - [10/Apr/2020:10:21:55 +0200] "GET /test/resources/developers HTTP/1.1" 200 22 http-bio-8080-exec-2 397
+0:0:0:0:0:0:0:1 - - [10/Apr/2020:10:22:08 +0200] "GET /resources/developers HTTP/1.1" 404 - http-bio-8080-exec-3 0
+0:0:0:0:0:0:0:1 - - [10/Apr/2020:10:22:14 +0200] "GET /test/resources/developers HTTP/1.1" 200 22 http-bio-8080-exec-4 2
