@@ -6,7 +6,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@Path("/hello")
+@Path("/")
 public class JAXHelloWorld {
 
     @GET
@@ -15,5 +15,11 @@ public class JAXHelloWorld {
     public Response getMsg(){
         String result = "Hello World";
         return Response.status(200).entity(result).build();
+    }
+
+    @GET
+    @Path("/developers")
+    public String developer(){
+        return "duchess,duke";
     }
 }
