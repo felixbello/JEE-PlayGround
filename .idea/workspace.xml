@@ -4,6 +4,7 @@
     <list default="true" id="d2e53dd8-0f8a-4d72-b11b-e5f50ce8a9c9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/zuken/jax/DevelopersResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zuken/jax/DevelopersResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2020-04-10" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/logs/access_log.2020-04-10" afterDir="false" />
     </list>
@@ -23,20 +24,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
   <component name="ProjectId" id="1aHAvlGA5jFXgkoxe3skDV1xLtx" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -48,6 +41,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunManager">
     <configuration name="AirHacks [tomcat7:run]" type="MavenRunConfiguration" factoryName="Maven">
@@ -92,11 +86,12 @@
       <workItem from="1586446745996" duration="290000" />
       <workItem from="1586447096902" duration="3730000" />
       <workItem from="1586501371273" duration="656000" />
+      <workItem from="1586515201016" duration="1277000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="991" y="217" key="#Project_Structure" timestamp="1586426992197">
@@ -107,26 +102,34 @@
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="414" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1586448606318" />
+    <state x="1204" y="271" key="#com.intellij.ide.util.MemberChooser" timestamp="1586508196270">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state x="1204" y="271" key="#com.intellij.ide.util.MemberChooser/0.30.1920.1050@0.30.1920.1050" timestamp="1586508196270" />
+    <state x="1079" y="291" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1586515125915">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state x="1079" y="291" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1586515125915" />
     <state x="1129" y="302" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586446905346">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="1129" y="302" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1586446905346" />
-    <state width="995" height="243" key="GridCell.Tab.0.bottom" timestamp="1586507443079">
+    <state width="995" height="243" key="GridCell.Tab.0.bottom" timestamp="1586518473114">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state width="995" height="243" key="GridCell.Tab.0.bottom/0.30.1920.1050@0.30.1920.1050" timestamp="1586507443079" />
-    <state width="995" height="243" key="GridCell.Tab.0.center" timestamp="1586507443079">
+    <state width="995" height="243" key="GridCell.Tab.0.bottom/0.30.1920.1050@0.30.1920.1050" timestamp="1586518473114" />
+    <state width="995" height="243" key="GridCell.Tab.0.center" timestamp="1586518473113">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state width="995" height="243" key="GridCell.Tab.0.center/0.30.1920.1050@0.30.1920.1050" timestamp="1586507443079" />
-    <state width="995" height="243" key="GridCell.Tab.0.left" timestamp="1586507443079">
+    <state width="995" height="243" key="GridCell.Tab.0.center/0.30.1920.1050@0.30.1920.1050" timestamp="1586518473113" />
+    <state width="995" height="243" key="GridCell.Tab.0.left" timestamp="1586518473112">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state width="995" height="243" key="GridCell.Tab.0.left/0.30.1920.1050@0.30.1920.1050" timestamp="1586507443079" />
-    <state width="995" height="243" key="GridCell.Tab.0.right" timestamp="1586507443079">
+    <state width="995" height="243" key="GridCell.Tab.0.left/0.30.1920.1050@0.30.1920.1050" timestamp="1586518473112" />
+    <state width="995" height="243" key="GridCell.Tab.0.right" timestamp="1586518473114">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state width="995" height="243" key="GridCell.Tab.0.right/0.30.1920.1050@0.30.1920.1050" timestamp="1586507443079" />
+    <state width="995" height="243" key="GridCell.Tab.0.right/0.30.1920.1050@0.30.1920.1050" timestamp="1586518473114" />
     <state width="995" height="351" key="GridCell.Tab.1.bottom" timestamp="1586444398580">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
@@ -143,13 +146,17 @@
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state width="995" height="351" key="GridCell.Tab.1.right/0.30.1920.1050@0.30.1920.1050" timestamp="1586444398580" />
+    <state x="900" y="200" key="SettingsEditor" timestamp="1586518593639">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state x="900" y="200" key="SettingsEditor/0.30.1920.1050@0.30.1920.1050" timestamp="1586518593639" />
     <state x="1178" y="379" key="com.intellij.ide.util.TipDialog" timestamp="1586501396220">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="1178" y="379" key="com.intellij.ide.util.TipDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1586501396220" />
-    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1586448633621">
+    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1586518569986">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup/0.30.1920.1050@0.30.1920.1050" timestamp="1586448633621" />
+    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup/0.30.1920.1050@0.30.1920.1050" timestamp="1586518569986" />
   </component>
 </project>
