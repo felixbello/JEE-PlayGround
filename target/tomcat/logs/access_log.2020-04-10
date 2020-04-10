@@ -52,3 +52,14 @@
 127.0.0.1 - - [10/Apr/2020:13:38:34 +0200] "GET /test/resources/developers/me-too HTTP/1.1" 200 42 http-bio-8080-exec-6 81
 0:0:0:0:0:0:0:1 - - [10/Apr/2020:13:38:41 +0200] "GET /test/resources/developers/me-too HTTP/1.1" 200 119 http-bio-8080-exec-8 13
 0:0:0:0:0:0:0:1 - - [10/Apr/2020:13:38:41 +0200] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-9 0
+0:0:0:0:0:0:0:1 - - [10/Apr/2020:14:29:36 +0200] "GET /test/resources/developers/me-too HTTP/1.1" 200 119 http-bio-8080-exec-1 439
+0:0:0:0:0:0:0:1 - - [10/Apr/2020:14:29:44 +0200] "GET /test/resources/developers/me/not HTTP/1.1" 200 19 http-bio-8080-exec-2 2
+0:0:0:0:0:0:0:1 - - [10/Apr/2020:14:29:52 +0200] "GET /test/resources/developers/felix/lang HTTP/1.1" 200 19 http-bio-8080-exec-3 1
+0:0:0:0:0:0:0:1 - - [10/Apr/2020:14:29:56 +0200] "GET /test/resources/developers/felix/python HTTP/1.1" 200 16 http-bio-8080-exec-4 1
+0:0:0:0:0:0:0:1 - - [10/Apr/2020:14:30:46 +0200] "GET /test/resources/developers/felix/python HTTP/1.1" 200 32 http-bio-8080-exec-1 411
+0:0:0:0:0:0:0:1 - - [10/Apr/2020:14:30:47 +0200] "GET /test/resources/developers/felix/python HTTP/1.1" 200 32 http-bio-8080-exec-2 1
+0:0:0:0:0:0:0:1 - - [10/Apr/2020:14:30:47 +0200] "GET /test/resources/developers/felix/python HTTP/1.1" 200 32 http-bio-8080-exec-3 1
+0:0:0:0:0:0:0:1 - - [10/Apr/2020:14:30:47 +0200] "GET /test/resources/developers/felix/python HTTP/1.1" 200 32 http-bio-8080-exec-4 4
+0:0:0:0:0:0:0:1 - - [10/Apr/2020:14:30:54 +0200] "GET /test/resources/developers/duke/java HTTP/1.1" 200 29 http-bio-8080-exec-5 1
+0:0:0:0:0:0:0:1 - - [10/Apr/2020:14:30:58 +0200] "GET /test/resources/developers/duke/python HTTP/1.1" 200 36 http-bio-8080-exec-6 2
+0:0:0:0:0:0:0:1 - - [10/Apr/2020:14:31:03 +0200] "GET /test/resources/developers/uli/python HTTP/1.1" 200 36 http-bio-8080-exec-7 2

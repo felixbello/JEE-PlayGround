@@ -25,4 +25,16 @@ public class DevelopersResource {
     public Developer developer(@PathParam("first") String first, @PathParam("last") String last){
         return new Developer(first,last);
     }
+
+    @GET
+    @Path("{first}/{lang}")
+    public String getLang(@PathParam("first") String first, @PathParam("lang") String lang) {
+        if(first.contains("duke") && lang.contains("java")){
+            return "its duke with java";
+        } else if(first.contains("felix") && lang.contains("python")){
+            return "its felix with python";
+        } else {
+            return "nothing existing about it";
+        }
+    }
 }
