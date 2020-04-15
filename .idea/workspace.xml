@@ -4,7 +4,6 @@
     <list default="true" id="d2e53dd8-0f8a-4d72-b11b-e5f50ce8a9c9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2020-04-10" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/logs/access_log.2020-04-10" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +86,7 @@
       <workItem from="1586501371273" duration="656000" />
       <workItem from="1586515201016" duration="4739000" />
       <workItem from="1586527293905" duration="6439000" />
+      <workItem from="1586955493179" duration="1289000" />
     </task>
     <servers />
   </component>
@@ -98,10 +98,10 @@
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="991" y="217" key="#Project_Structure/0.30.1920.1050@0.30.1920.1050" timestamp="1586426992197" />
-    <state x="414" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586448606318">
+    <state x="414" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586955682565">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state x="414" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1586448606318" />
+    <state x="414" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1586955682565" />
     <state x="1204" y="271" key="#com.intellij.ide.util.MemberChooser" timestamp="1586508196270">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
@@ -190,9 +190,9 @@
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="685" y="216" key="new project wizard/0.30.1920.1050@0.30.1920.1050" timestamp="1586527173752" />
-    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1586518569986">
+    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1586956860892">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup/0.30.1920.1050@0.30.1920.1050" timestamp="1586518569986" />
+    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup/0.30.1920.1050@0.30.1920.1050" timestamp="1586956860892" />
   </component>
 </project>
