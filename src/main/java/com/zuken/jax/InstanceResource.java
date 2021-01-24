@@ -19,6 +19,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Path( "instance" )
@@ -141,9 +142,10 @@ public class InstanceResource {
 
     @GET
     @Path( "{zone}/list" )
-    public List<ZukenInstance> list(@PathParam( "zone" ) String  zone) {
+    public ArrayList<ZukenInstance> list(@PathParam( "zone" ) String  zone) {
 
-        List<ZukenInstance> found = null;
+        ArrayList<ZukenInstance> found;
+        found = new ArrayList<>();
 
         try {
 
