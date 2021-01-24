@@ -116,17 +116,9 @@ public class DevelopersResource {
         Compute.Instances.List instances = compute.instances().list(PROJECT_ID, ZONE_NAME);
         InstanceList list = instances.execute();
         boolean found = false;
-        if (list.getItems() == null) {
-            System.out.println(
-                    "No instances found. Sign in to the Google Developers Console and create "
-                            + "an instance at: https://console.developers.google.com/");
-        } else {
-            for (Instance instance : list.getItems()) {
-                System.out.println(instance.toPrettyString());
-                if (instance.getName().equals(SAMPLE_INSTANCE_NAME)) {
-                    found = true;
-                }
-            }
+
+        for (Instance instance: list.getItems()) {
+            System.out.println(instance.getName());
         }
         return found;
     }
