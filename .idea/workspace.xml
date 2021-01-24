@@ -48,7 +48,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.google.cloudcode.ide_session_index" value="20210124_0031" />
+    <property name="com.google.cloudcode.ide_session_index" value="20210124_0033" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -59,6 +59,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AirHacks [tomcat7:run]" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -123,7 +134,8 @@
       <workItem from="1611474998848" duration="14000" />
       <workItem from="1611475033131" duration="275000" />
       <workItem from="1611475383567" duration="777000" />
-      <workItem from="1611502477108" duration="48000" />
+      <workItem from="1611502477108" duration="555000" />
+      <workItem from="1611513796950" duration="251000" />
     </task>
     <servers />
   </component>

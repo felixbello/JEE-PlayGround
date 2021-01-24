@@ -141,9 +141,9 @@ public class InstanceResource {
 
     @GET
     @Path( "{zone}/list" )
-    public List<Instance> list(@PathParam( "zone" ) String  zone) {
+    public List<ZukenInstance> list(@PathParam( "zone" ) String  zone) {
 
-        List<Instance> found = null;
+        List<ZukenInstance> found = null;
 
         try {
 
@@ -161,7 +161,10 @@ public class InstanceResource {
 
             InstanceList response = request.execute();
 
-            found = response.getItems();
+            for (Instance instance:response.getItems()) {
+               found.add(new ZukenInstance(instance.getName()));
+            }
+
 
         } catch (Exception e){
             e.printStackTrace();
