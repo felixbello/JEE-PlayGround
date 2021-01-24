@@ -37,4 +37,11 @@ public class DevelopersResource {
             return "nothing existing about it";
         }
     }
+
+    @GET
+    @Path( "{first}/{second}/{third}" )
+    public String testingThree(@PathParam( "first" ) String first, @PathParam( "second" ) String second, @PathParam( "third" ) String third){
+        System.out.println("loooooks not bad");
+        return first + " " + second + " " + third;
+    }
 }
