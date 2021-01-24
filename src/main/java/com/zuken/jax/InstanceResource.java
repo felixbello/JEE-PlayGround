@@ -170,6 +170,7 @@ public class InstanceResource {
                 ZukenInstance zukenInstance = new ZukenInstance();
                 zukenInstance.setName( instance.getName() );
                 zukenInstance.setStatus( instance.getStatus() );
+                zukenInstance.setZone( instance.getZone() );
                 found.add( zukenInstance );
 //               found.add(new ZukenInstance(instance.getName()));
             }

@@ -4,22 +4,28 @@ public class ZukenInstance {
 
     private String name;
     private String status;
+    private String zone;
 
     public ZukenInstance() {
     }
 
-    public ZukenInstance(String name, String status) {
+    public ZukenInstance(String name, String status, String zone) {
         this.name = name;
         this.status = status;
+        this.zone = zone;
     }
 
     // Getter
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public String getStatus() {
-        return status;
+        return this.status;
+    }
+
+    public String getZone() {
+        return this.zone;
     }
 
     // Setter
@@ -29,5 +35,9 @@ public class ZukenInstance {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public void setZone(String zone) {
+        this.zone = zone;
     }
 }
