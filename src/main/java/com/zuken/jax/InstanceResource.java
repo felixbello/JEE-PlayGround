@@ -15,8 +15,10 @@ import com.google.auth.oauth2.GoogleCredentials;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
+import javax.ws.rs.core.MediaType;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.util.ArrayList;
@@ -142,6 +144,7 @@ public class InstanceResource {
 
     @GET
     @Path( "{zone}/list" )
+    @Produces(MediaType.APPLICATION_JSON)
     public ArrayList<ZukenInstance> list(@PathParam( "zone" ) String  zone) {
 
         ArrayList<ZukenInstance> found;
