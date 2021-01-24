@@ -167,7 +167,11 @@ public class InstanceResource {
             InstanceList response = request.execute();
 
             for (Instance instance:response.getItems()) {
-               found.add(new ZukenInstance(instance.getName()));
+                ZukenInstance zukenInstance = new ZukenInstance();
+                zukenInstance.setName( instance.getName() );
+                zukenInstance.setStatus( instance.getStatus() );
+                found.add( zukenInstance );
+//               found.add(new ZukenInstance(instance.getName()));
             }
 
 

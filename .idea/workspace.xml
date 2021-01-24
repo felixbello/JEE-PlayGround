@@ -7,6 +7,7 @@
     <list default="true" id="d2e53dd8-0f8a-4d72-b11b-e5f50ce8a9c9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/zuken/jax/InstanceResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zuken/jax/InstanceResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zuken/jax/ZukenInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zuken/jax/ZukenInstance.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +49,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.google.cloudcode.ide_session_index" value="20210124_0033" />
+    <property name="com.google.cloudcode.ide_session_index" value="20210124_0035" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -135,7 +136,7 @@
       <workItem from="1611475033131" duration="275000" />
       <workItem from="1611475383567" duration="777000" />
       <workItem from="1611502477108" duration="555000" />
-      <workItem from="1611513796950" duration="787000" />
+      <workItem from="1611513796950" duration="1250000" />
     </task>
     <servers />
   </component>
