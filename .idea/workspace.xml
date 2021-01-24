@@ -48,7 +48,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.google.cloudcode.ide_session_index" value="20210124_0023" />
+    <property name="com.google.cloudcode.ide_session_index" value="20210124_0024" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -121,7 +121,8 @@
       <workItem from="1611448497878" duration="49000" />
       <workItem from="1611448559940" duration="4104000" />
       <workItem from="1611474998848" duration="14000" />
-      <workItem from="1611475033131" duration="136000" />
+      <workItem from="1611475033131" duration="275000" />
+      <workItem from="1611475383567" duration="35000" />
     </task>
     <servers />
   </component>

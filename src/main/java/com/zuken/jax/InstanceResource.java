@@ -160,7 +160,7 @@ public class InstanceResource {
 
             InstanceList response = request.execute();
 
-            found = String.valueOf( request );
+            found = String.valueOf( response.getItems() );
 
         } catch (Exception e){
             e.printStackTrace();
