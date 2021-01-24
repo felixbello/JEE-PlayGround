@@ -81,16 +81,8 @@ public class DevelopersResource {
         try {
             httpTransport = GoogleNetHttpTransport.newTrustedTransport();
 
-            // Authenticate using Google Application Default Credentials.
-            GoogleCredentials credential = GoogleCredentials.getApplicationDefault();
-            if (credential.createScopedRequired()) {
-                List<String> scopes = new ArrayList<>();
-                // Set Google Cloud Storage scope to Full Control.
-                scopes.add( ComputeScopes.DEVSTORAGE_FULL_CONTROL);
-                // Set Google Compute Engine scope to Read-write.
-                scopes.add(ComputeScopes.COMPUTE);
-                credential = credential.createScoped(scopes);
-            }
+            GoogleCredentials credential = Helper.getGoogleCredentials();
+
             HttpRequestInitializer requestInitializer = new HttpCredentialsAdapter(credential);
             // Create Compute Engine object for listing instances.
             Compute compute =
@@ -110,6 +102,8 @@ public class DevelopersResource {
 
         return "hopefully successuflly";
     }
+
+
 
     public static boolean printInstances(Compute compute) throws IOException {
         System.out.println("================== Listing Compute Engine Instances ==================");
