@@ -19,6 +19,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
+import java.util.List;
 
 @Path( "instance" )
 public class InstanceResource {
@@ -140,9 +141,9 @@ public class InstanceResource {
 
     @GET
     @Path( "{zone}/list" )
-    public String list(@PathParam( "zone" ) String  zone) {
+    public List<Instance> list(@PathParam( "zone" ) String  zone) {
 
-        String found = null;
+        List<Instance> found = null;
 
         try {
 
@@ -160,7 +161,7 @@ public class InstanceResource {
 
             InstanceList response = request.execute();
 
-            found = String.valueOf( response.getItems() );
+            found = response.getItems();
 
         } catch (Exception e){
             e.printStackTrace();
