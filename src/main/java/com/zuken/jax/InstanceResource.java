@@ -72,8 +72,8 @@ public class InstanceResource {
     }
 
     @GET
-    @Path("{zone}/{name}/{start}")
-    public String start(@PathParam( "zone" ) String zone, @PathParam("name") String name, @PathParam( "start" ) String start) {
+    @Path("{zone}/{name}/start")
+    public String start(@PathParam( "zone" ) String zone, @PathParam("name") String name) {
 
         String found = null;
 
