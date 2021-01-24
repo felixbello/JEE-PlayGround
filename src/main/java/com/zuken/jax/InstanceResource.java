@@ -34,13 +34,13 @@ public class InstanceResource {
     private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
 
     @GET
-    public String developer(@Context HttpHeaders http){
+    public String instance(@Context HttpHeaders http){
         return "Instance Servlet Up and Running";
     }
 
     @GET
     @Path("{name}")
-    public String developer(@PathParam("name") String name) {
+    public String getStatus(@PathParam("name") String name) {
 
         String found = null;
 
@@ -73,7 +73,7 @@ public class InstanceResource {
 
     @GET
     @Path("{zone}/{name}/{start}")
-    public String developer(@PathParam( "zone" ) String zone, @PathParam("name") String name, @PathParam( "start" ) String start) {
+    public String start(@PathParam( "zone" ) String zone, @PathParam("name") String name, @PathParam( "start" ) String start) {
 
         String found = null;
 
@@ -91,6 +91,38 @@ public class InstanceResource {
 
             Compute.Instances.Start request = compute.instances().start(PROJECT_ID,zone, name);
 
+
+            Operation response = request.execute();
+
+            found = response.getStatus();
+
+        } catch (GeneralSecurityException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return found;
+    }
+    @GET
+    @Path("{zone}/{name}/stop")
+    public String stop(@PathParam( "zone" ) String zone, @PathParam("name") String name) {
+
+        String found = null;
+
+        try {
+
+            GoogleCredentials credentials = Helper.getGoogleCredentials();
+            httpTransport = GoogleNetHttpTransport.newTrustedTransport();
+            HttpRequestInitializer requestInitializer = new HttpCredentialsAdapter(credentials);
+
+            // Create Compute Engine object for listing instances.
+            Compute compute =
+                    new Compute.Builder(httpTransport, JSON_FACTORY, requestInitializer)
+                            .setApplicationName(APPLICATION_NAME)
+                            .build();
+
+            Compute.Instances.Stop request = compute.instances().stop(PROJECT_ID,zone, name);
 
             Operation response = request.execute();
 
