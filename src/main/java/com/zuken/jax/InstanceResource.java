@@ -7,6 +7,7 @@ import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.services.compute.Compute;
 import com.google.api.services.compute.model.Instance;
+import com.google.api.services.compute.model.InstanceList;
 import com.google.api.services.compute.model.Operation;
 import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.auth.oauth2.GoogleCredentials;
@@ -131,6 +132,37 @@ public class InstanceResource {
         } catch (GeneralSecurityException e) {
             e.printStackTrace();
         } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return found;
+    }
+
+    @GET
+    @Path( "{zone}/list" )
+    public String list(@PathParam( "zone" ) String  zone) {
+
+        String found = null;
+
+        try {
+
+            GoogleCredentials credentials = Helper.getGoogleCredentials();
+            httpTransport = GoogleNetHttpTransport.newTrustedTransport();
+            HttpRequestInitializer requestInitializer = new HttpCredentialsAdapter(credentials);
+
+            // Create Compute Engine object for listing instances.
+            Compute compute =
+                    new Compute.Builder(httpTransport, JSON_FACTORY, requestInitializer)
+                            .setApplicationName(APPLICATION_NAME)
+                            .build();
+
+            Compute.Instances.List request = compute.instances().list( PROJECT_ID, zone);
+
+            InstanceList response = request.execute();
+
+            found = String.valueOf( request );
+
+        } catch (Exception e){
             e.printStackTrace();
         }
 
