@@ -1,0 +1,2 @@
+0:0:0:0:0:0:0:1 - - [26/Jan/2021:22:10:38 +0100] "GET /test/resources/instance/europe-west6-a/list HTTP/1.1" 200 12 http-bio-8080-exec-1 654
+0:0:0:0:0:0:0:1 - - [26/Jan/2021:22:10:38 +0100] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-3 0

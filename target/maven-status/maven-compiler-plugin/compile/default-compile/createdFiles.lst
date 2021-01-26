@@ -1,3 +1,6 @@
-com\zuken\jax\DevelopersResource.class
-com\zuken\jax\Developer.class
-com\zuken\jax\JAXRSConfiguration.class
+com/zuken/jax/DevelopersResource.class
+com/zuken/jax/Developer.class
+com/zuken/jax/InstanceResource.class
+com/zuken/jax/JAXRSConfiguration.class
+com/zuken/jax/ZukenInstance.class
+com/zuken/jax/Helper.class
