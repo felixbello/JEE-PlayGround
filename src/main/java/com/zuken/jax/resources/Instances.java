@@ -53,8 +53,7 @@ public class Instances {
     @Produces(MediaType.APPLICATION_JSON)
     public ArrayList<ZukenInstance> list() {
 
-        ArrayList<ZukenInstance> found;
-        found = new ArrayList<>();
+        ArrayList<ZukenInstance> instancesList = new ArrayList<>();
 
         try {
 
@@ -71,27 +70,31 @@ public class Instances {
             Compute.Zones.List requestZones = computeService.zones().list( PROJECT_ID );
             ZoneList zoneResponse = requestZones.execute();
 
-            for (Zone zone : zoneResponse.getItems()) {
+            if (zoneResponse.getItems() != null ) {
+                for (Zone zone : zoneResponse.getItems()) {
 
-                Compute.Instances.List request = computeService.instances().list( PROJECT_ID, zone.getName() );
+                    Compute.Instances.List request = computeService.instances().list( PROJECT_ID, zone.getName() );
 
-                InstanceList instanceListResponse = request.execute();
+                    InstanceList instanceListResponse = request.execute();
 
-                for (Instance instance : instanceListResponse.getItems()) {
-                    ZukenInstance zukenInstance = new ZukenInstance();
-                    zukenInstance.setName( instance.getName() );
-                    zukenInstance.setStatus( instance.getStatus() );
-                    zukenInstance.setZone( instance.getZone() );
-                    found.add( zukenInstance );
+                    if (instanceListResponse.getItems() != null) {
+                        for (Instance instance : instanceListResponse.getItems()) {
+                            ZukenInstance zukenInstance = new ZukenInstance();
+                            zukenInstance.setName( instance.getName() );
+                            zukenInstance.setStatus( instance.getStatus() );
+                            zukenInstance.setZone( instance.getZone() );
+                            instancesList.add( zukenInstance );
+                        }
+                    }
+
                 }
-
             }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        return found;
+        return instancesList;
     }
 
 }
