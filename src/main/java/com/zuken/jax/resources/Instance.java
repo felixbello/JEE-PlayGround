@@ -44,9 +44,9 @@ public class Instance {
     }
 
     @GET
-    @Path("{name}")
+    @Path("{zone}/{name}")
     @Produces(MediaType.APPLICATION_JSON)
-    public ZukenInstance getStatus(@PathParam("name") String name) {
+    public ZukenInstance get(@PathParam( "zone" ) String zone,@PathParam("name") String name ){
 
         ZukenInstance instance = null;
 
@@ -62,7 +62,7 @@ public class Instance {
                             .setApplicationName(APPLICATION_NAME)
                             .build();
 
-            Compute.Instances.Get request = compute.instances().get(PROJECT_ID, ZONE_NAME, name);
+            Compute.Instances.Get request = compute.instances().get(PROJECT_ID, zone, name);
 
             com.google.api.services.compute.model.Instance response = request.execute();
 
