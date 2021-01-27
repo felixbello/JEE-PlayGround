@@ -98,39 +98,39 @@ public class Instances {
         return instancesList;
     }
 
-    @GET
-    @Path("{name}")
-    public ZukenInstance getInstance(@PathParam("name") String name) {
-
-        ZukenInstance instance = null;
-
-        try {
-
-            GoogleCredentials credentials = Helper.getGoogleCredentials();
-            httpTransport = GoogleNetHttpTransport.newTrustedTransport();
-            HttpRequestInitializer requestInitializer = new HttpCredentialsAdapter(credentials);
-
-            // Create Compute Engine object for listing instances.
-            Compute compute =
-                    new Compute.Builder(httpTransport, JSON_FACTORY, requestInitializer)
-                            .setApplicationName(APPLICATION_NAME)
-                            .build();
-
-            Compute.Instances.Get request = compute.instances().get(PROJECT_ID, ZONE_NAME, name);
-
-            com.google.api.services.compute.model.Instance response = request.execute();
-
-            instance = new ZukenInstance();
-            instance.setName( response.getName() );
-            instance.setStatus( response.getStatus() );
-            instance.setZone( response.getZone() );
-
-        } catch (GeneralSecurityException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return instance;
-    }
+//    @GET
+//    @Path("{name}")
+//    public ZukenInstance getInstance(@PathParam("name") String name) {
+//
+//        ZukenInstance instance = null;
+//
+//        try {
+//
+//            GoogleCredentials credentials = Helper.getGoogleCredentials();
+//            httpTransport = GoogleNetHttpTransport.newTrustedTransport();
+//            HttpRequestInitializer requestInitializer = new HttpCredentialsAdapter(credentials);
+//
+//            // Create Compute Engine object for listing instances.
+//            Compute compute =
+//                    new Compute.Builder(httpTransport, JSON_FACTORY, requestInitializer)
+//                            .setApplicationName(APPLICATION_NAME)
+//                            .build();
+//
+//            Compute.Instances.Get request = compute.instances().get(PROJECT_ID, ZONE_NAME, name);
+//
+//            com.google.api.services.compute.model.Instance response = request.execute();
+//
+//            instance = new ZukenInstance();
+//            instance.setName( response.getName() );
+//            instance.setStatus( response.getStatus() );
+//            instance.setZone( response.getZone() );
+//
+//        } catch (GeneralSecurityException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//        return instance;
+//    }
 }

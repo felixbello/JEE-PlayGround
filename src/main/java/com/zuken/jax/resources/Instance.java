@@ -45,9 +45,9 @@ public class Instance {
 
     @GET
     @Path("{name}")
-    public String getStatus(@PathParam("name") String name) {
+    public ZukenInstance getStatus(@PathParam("name") String name) {
 
-        String found = null;
+        ZukenInstance instance = null;
 
         try {
 
@@ -65,7 +65,10 @@ public class Instance {
 
             com.google.api.services.compute.model.Instance response = request.execute();
 
-            found = response.getStatus();
+            instance = new ZukenInstance();
+            instance.setName( response.getName() );
+            instance.setStatus( response.getStatus() );
+            instance.setZone( response.getZone() );
 
         } catch (GeneralSecurityException e) {
             e.printStackTrace();
@@ -73,7 +76,7 @@ public class Instance {
             e.printStackTrace();
         }
 
-        return found;
+        return instance;
     }
 
     @GET
