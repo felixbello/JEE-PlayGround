@@ -11,7 +11,7 @@ import com.google.api.services.compute.model.Instance;
 import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.zuken.jax.Helper;
-import com.zuken.jax.ZukenInstance;
+import com.zuken.jax.models.ZukenInstance;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -20,8 +20,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
-import java.io.IOException;
-import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 
 @Path("instances")

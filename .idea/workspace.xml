@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d2e53dd8-0f8a-4d72-b11b-e5f50ce8a9c9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zuken/jax/InstanceResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zuken/jax/ZukenInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zuken/jax/models/ZukenInstance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zuken/jax/resources/Instance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zuken/jax/resources/Instance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zuken/jax/resources/Instances.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zuken/jax/resources/Instances.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +61,9 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.zuken.jax.models" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.zuken.jax.resources" />
     </key>
@@ -150,7 +155,7 @@
       <workItem from="1611698734049" duration="78000" />
       <workItem from="1611698831282" duration="132000" />
       <workItem from="1611699394879" duration="897000" />
-      <workItem from="1611744035192" duration="2647000" />
+      <workItem from="1611744035192" duration="2778000" />
     </task>
     <servers />
   </component>

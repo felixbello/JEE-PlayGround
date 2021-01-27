@@ -1,4 +1,4 @@
-package com.zuken.jax;
+package com.zuken.jax.models;
 
 public class ZukenInstance {
 
