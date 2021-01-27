@@ -24,7 +24,7 @@ import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 import java.util.List;
 
-@Path( "instance" )
+@Path( "instance2" )
 public class InstanceResource {
 
     private static HttpTransport httpTransport;
