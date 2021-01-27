@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d2e53dd8-0f8a-4d72-b11b-e5f50ce8a9c9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zuken/jax/resources/Instance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zuken/jax/resources/Instance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zuken/jax/resources/Instances.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zuken/jax/resources/Instances.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zuken/jax/InstanceResource.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +64,17 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AirHacks [tomcat7:run]" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -140,7 +150,7 @@
       <workItem from="1611698734049" duration="78000" />
       <workItem from="1611698831282" duration="132000" />
       <workItem from="1611699394879" duration="897000" />
-      <workItem from="1611744035192" duration="2491000" />
+      <workItem from="1611744035192" duration="2647000" />
     </task>
     <servers />
   </component>
