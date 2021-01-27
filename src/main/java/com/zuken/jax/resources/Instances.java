@@ -98,4 +98,44 @@ public class Instances {
         return instancesList;
     }
 
+    @GET
+    @Path( "{zone}/list" )
+    @Produces(MediaType.APPLICATION_JSON)
+    public ArrayList<ZukenInstance> list(@PathParam( "zone" ) String  zone) {
+
+        ArrayList<ZukenInstance> found;
+        found = new ArrayList<>();
+
+        try {
+
+            GoogleCredentials credentials = Helper.getGoogleCredentials();
+            httpTransport = GoogleNetHttpTransport.newTrustedTransport();
+            HttpRequestInitializer requestInitializer = new HttpCredentialsAdapter(credentials);
+
+            // Create Compute Engine object for listing instances.
+            Compute compute =
+                    new Compute.Builder(httpTransport, JSON_FACTORY, requestInitializer)
+                            .setApplicationName(APPLICATION_NAME)
+                            .build();
+
+            Compute.Instances.List request = compute.instances().list( PROJECT_ID, zone);
+
+            InstanceList response = request.execute();
+
+            for (com.google.api.services.compute.model.Instance instance:response.getItems()) {
+                ZukenInstance zukenInstance = new ZukenInstance();
+                zukenInstance.setName( instance.getName() );
+                zukenInstance.setStatus( instance.getStatus() );
+                zukenInstance.setZone( instance.getZone() );
+                found.add( zukenInstance );
+//               found.add(new ZukenInstance(instance.getName()));
+            }
+
+
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return found;
+    }
 }
