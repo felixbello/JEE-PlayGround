@@ -45,6 +45,7 @@ public class Instance {
 
     @GET
     @Path("{name}")
+    @Produces(MediaType.APPLICATION_JSON)
     public ZukenInstance getStatus(@PathParam("name") String name) {
 
         ZukenInstance instance = null;
