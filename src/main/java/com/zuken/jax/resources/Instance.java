@@ -21,6 +21,8 @@ import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
+import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
 
 @Path( "instance" )
 public class Instance {
@@ -76,6 +78,36 @@ public class Instance {
         }
 
         return instance;
+    }
+
+    @GET
+    @Path( "{zone}/{name}/delete" )
+    public String delete(@PathParam( "zone" ) String zone, @PathParam( "name" ) String name){
+       String res = null;
+       try {
+           GoogleCredentials credentials = Helper.getGoogleCredentials();
+           httpTransport = GoogleNetHttpTransport.newTrustedTransport();
+           HttpRequestInitializer requestInitializer = new HttpCredentialsAdapter( credentials );
+
+           // Create Compute Engine object for listing instances.
+           Compute compute =
+                   new Compute.Builder(httpTransport, JSON_FACTORY, requestInitializer)
+                           .setApplicationName(APPLICATION_NAME)
+                           .build();
+
+           Compute.Instances.Delete request = compute.instances().delete( PROJECT_ID, zone, name );
+
+           Operation response = request.execute();
+
+           res = response.getStatus();
+
+       } catch (GeneralSecurityException e) {
+           e.printStackTrace();
+       } catch (IOException e) {
+           e.printStackTrace();
+       }
+
+       return res;
     }
 
     @GET
