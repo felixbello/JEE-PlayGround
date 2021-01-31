@@ -11,7 +11,6 @@ import com.google.api.services.compute.model.Instance;
 import com.google.api.services.compute.model.InstanceList;
 import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.auth.oauth2.GoogleCredentials;
-import jdk.nashorn.internal.objects.annotations.Getter;
 
 import javax.json.Json;
 import javax.json.JsonArray;

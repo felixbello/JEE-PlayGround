@@ -1,0 +1,9 @@
+192.168.0.213 - - [31/Jan/2021:00:05:52 +0100] "GET / HTTP/1.1" 404 - http-bio-8080-exec-1 0
+192.168.0.213 - - [31/Jan/2021:00:05:57 +0100] "GET /test HTTP/1.1" 302 - http-bio-8080-exec-3 0
+192.168.0.213 - - [31/Jan/2021:00:05:57 +0100] "GET /test/ HTTP/1.1" 200 119 http-bio-8080-exec-4 14
+192.168.0.213 - - [31/Jan/2021:00:05:57 +0100] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-5 0
+192.168.0.213 - - [31/Jan/2021:00:07:04 +0100] "GET /test/ HTTP/1.1" 200 119 http-bio-8080-exec-7 1
+192.168.0.213 - - [31/Jan/2021:00:07:25 +0100] "GET /test/resources/instance/model/inst HTTP/1.1" 405 1013 http-bio-8080-exec-9 402
+192.168.0.213 - - [31/Jan/2021:00:29:42 +0100] "POST /test/resources/instance/model/inst HTTP/1.1" 200 30 http-bio-8080-exec-1 99
+192.168.0.213 - - [31/Jan/2021:00:34:45 +0100] "POST /test/resources/instance/model/inst HTTP/1.1" 200 34 http-bio-8080-exec-1 429
+192.168.0.213 - - [31/Jan/2021:00:37:29 +0100] "POST /test/resources/instance/model/inst HTTP/1.1" 200 43 http-bio-8080-exec-1 413
