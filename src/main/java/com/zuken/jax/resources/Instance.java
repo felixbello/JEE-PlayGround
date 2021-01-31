@@ -276,17 +276,21 @@ public class Instance {
 
             requestAddress.setName( name );
             Compute.Addresses.Insert request = compute.addresses().insert( PROJECT_ID, region, requestAddress );
+            System.out.println("Try to create network");
             Operation response = request.execute();
 
             while (!created) {
                 created = checkFixedIPCreated( compute, PROJECT_ID, region, name );
                 TimeUnit.SECONDS.sleep( 3 );
             }
+            System.out.println("Network should be created");
 
             Compute.Addresses.Get reqAdd = compute.addresses().get( PROJECT_ID, region, name );
             Address respAdd = reqAdd.execute();
 
             ipAddress = respAdd.getAddress();
+
+            System.out.println("Network created: " + ipAddress);
 
         } catch (IOException e) {
             e.printStackTrace();
