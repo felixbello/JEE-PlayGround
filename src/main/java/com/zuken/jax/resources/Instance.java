@@ -242,7 +242,7 @@ public class Instance {
                 List<AttachedDisk> diskList = new ArrayList<>();
                 AttachedDisk bootDisk = new AttachedDisk();
                 bootDisk.setBoot( true );
-                bootDisk.setSource( "projects/online-school-labs" + instance[i].getZone() + "/disks/" + instance[i].getName() );
+                bootDisk.setSource( "projects/online-school-labs/zones/" + instance[i].getZone() + "/disks/" + instance[i].getName() );
                 bootDisk.setAutoDelete( true );
                 diskList.add( bootDisk );
 
