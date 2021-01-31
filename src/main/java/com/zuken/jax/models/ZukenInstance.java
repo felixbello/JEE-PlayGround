@@ -5,15 +5,17 @@ public class ZukenInstance {
     private String name;
     private String status;
     private String zone;
+    private String country;
     private String template;
 
     public ZukenInstance() {
     }
 
-    public ZukenInstance(String name, String status, String zone, String template) {
+    public ZukenInstance(String name, String status, String zone, String country, String template) {
         this.name = name;
         this.status = status;
         this.zone = zone;
+        this.country = country;
         this.template = template;
     }
 
@@ -30,7 +32,11 @@ public class ZukenInstance {
         return this.zone;
     }
 
-    public String getTemplate(){
+    public String getCountry() {
+        return this.country;
+    }
+
+    public String getTemplate() {
         return this.template;
     }
 
@@ -47,7 +53,11 @@ public class ZukenInstance {
         this.zone = zone;
     }
 
-    public void setTemplate(String template){
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public void setTemplate(String template) {
         this.template = template;
     }
 }

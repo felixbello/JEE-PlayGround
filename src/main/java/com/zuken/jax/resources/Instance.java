@@ -191,6 +191,15 @@ public class Instance {
         String name = null;
         boolean diskCreated = false;
         try {
+            GoogleCredentials credentials = Helper.getGoogleCredentials();
+            httpTransport = GoogleNetHttpTransport.newTrustedTransport();
+            HttpRequestInitializer requestInitializer = new HttpCredentialsAdapter( credentials );
+
+            // Create Compute Engine object for listing instances.
+            Compute compute =
+                    new Compute.Builder( httpTransport, JSON_FACTORY, requestInitializer )
+                            .setApplicationName( APPLICATION_NAME )
+                            .build();
             for (int i = 0; i <= instance.length - 1; i++) {
 
                 Disk.create( instance[i].getZone(), instance[i].getTemplate(), instance[i].getName() );
@@ -203,17 +212,106 @@ public class Instance {
 
                 System.out.println( "Disk: " + instance[i].getName() + " created" );
 
+                com.google.api.services.compute.model.Instance requestInstanceBody = new com.google.api.services.compute.model.Instance();
 
-//                com.google.api.services.compute.model.Instance requestInstance = new com.google.api.services.compute.model.Instance();
+                requestInstanceBody.setName( name );
+                requestInstanceBody.setMachineType( "projects/online-school-labs/zones/" + instance[i].getZone() + "/machineTypes/e2-standard-8" );
+                requestInstanceBody.setZone( "projects/online-school-labs/zones/" + instance[i].getZone() );
 
+                List<NetworkInterface> networkInterfacesList = new ArrayList<>();
+                NetworkInterface networkInterface = new NetworkInterface();
+                networkInterface.setKind( "compute#networkInterface" );
+
+                String ipAddress = createFixedIP( compute, instance[i].getCountry(), instance[i].getName() );
+
+                List<AccessConfig> accessConfigsList = new ArrayList<>();
+                AccessConfig accessConfig = new AccessConfig();
+                accessConfig.setKind( "compute#accessConfig" );
+                accessConfig.setName( "External NAT" );
+                accessConfig.setType( "ONE_TO_ONE_NAT" );
+                accessConfig.setNatIP( ipAddress );
+                accessConfigsList.add( accessConfig );
+
+                networkInterface.setAccessConfigs( accessConfigsList );
+
+                networkInterfacesList.add( networkInterface );
+
+                requestInstanceBody.setNetworkInterfaces( networkInterfacesList );
+
+                // Disk
+                List<AttachedDisk> diskList = new ArrayList<>();
+                AttachedDisk bootDisk = new AttachedDisk();
+                bootDisk.setBoot( true );
+                bootDisk.setSource( "projects/online-school-labs" + instance[i].getZone() + "/disks/" + instance[i].getName() );
+                bootDisk.setAutoDelete( true );
+                diskList.add( bootDisk );
+
+                requestInstanceBody.setDisks( diskList );
+
+                Compute.Instances.Insert insertInstance = compute.instances().insert( PROJECT_ID, instance[i].getZone(), requestInstanceBody );
+                Operation requestInstance = insertInstance.execute();
+
+                diskCreated = false;
             }
 
         } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (GeneralSecurityException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
 
         return name;
+    }
+
+    private String createFixedIP(Compute compute, String region, String name) {
+        String ipAddress = null;
+
+        boolean created = false;
+
+        try {
+            Address requestAddress = new Address();
+
+            requestAddress.setName( name );
+            Compute.Addresses.Insert request = compute.addresses().insert( PROJECT_ID, region, requestAddress );
+            Operation response = request.execute();
+
+            while (!created) {
+                created = checkFixedIPCreated( compute, PROJECT_ID, region, name );
+                TimeUnit.SECONDS.sleep( 3 );
+            }
+
+            Compute.Addresses.Get reqAdd = compute.addresses().get( PROJECT_ID, region, name );
+            Address respAdd = reqAdd.execute();
+
+            ipAddress = respAdd.getAddress();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
+        return ipAddress;
+    }
+
+    private boolean checkFixedIPCreated(Compute compute, String projectId, String region, String name) {
+        boolean created = false;
+
+        try {
+            Compute.Addresses.Get reqAdd = compute.addresses().get( projectId, region, name );
+            Address respAdd = reqAdd.execute();
+            if (respAdd.getStatus().equals( "RESERVED" )) {
+                created = true;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return created;
     }
 
 
