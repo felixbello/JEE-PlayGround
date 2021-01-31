@@ -24,29 +24,35 @@ import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 
-@Path( "instance" )
+@Path("instance")
 public class Instance {
 
     private static HttpTransport httpTransport;
     private static final String APPLICATION_NAME = "";
-    /** Set PROJECT_ID to your Project ID from the Overview pane in the Developers console. */
+    /**
+     * Set PROJECT_ID to your Project ID from the Overview pane in the Developers console.
+     */
     private static final String PROJECT_ID = "online-school-labs";
 
-    /** Set Compute Engine zone. */
+    /**
+     * Set Compute Engine zone.
+     */
     private static final String ZONE_NAME = "europe-west6-a";
 
-    /** Global instance of the JSON factory. */
+    /**
+     * Global instance of the JSON factory.
+     */
     private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
 
     @GET
-    public String instance(@Context HttpHeaders http){
+    public String instance(@Context HttpHeaders http) {
         return "Instance Servlet Up and Running";
     }
 
     @GET
     @Path("{zone}/{name}")
     @Produces(MediaType.APPLICATION_JSON)
-    public ZukenInstance get(@PathParam( "zone" ) String zone,@PathParam("name") String name ){
+    public ZukenInstance get(@PathParam("zone") String zone, @PathParam("name") String name) {
 
         ZukenInstance instance = null;
 
@@ -54,15 +60,15 @@ public class Instance {
 
             GoogleCredentials credentials = Helper.getGoogleCredentials();
             httpTransport = GoogleNetHttpTransport.newTrustedTransport();
-            HttpRequestInitializer requestInitializer = new HttpCredentialsAdapter(credentials);
+            HttpRequestInitializer requestInitializer = new HttpCredentialsAdapter( credentials );
 
             // Create Compute Engine object for listing instances.
             Compute compute =
-                    new Compute.Builder(httpTransport, JSON_FACTORY, requestInitializer)
-                            .setApplicationName(APPLICATION_NAME)
+                    new Compute.Builder( httpTransport, JSON_FACTORY, requestInitializer )
+                            .setApplicationName( APPLICATION_NAME )
                             .build();
 
-            Compute.Instances.Get request = compute.instances().get(PROJECT_ID, zone, name);
+            Compute.Instances.Get request = compute.instances().get( PROJECT_ID, zone, name );
 
             com.google.api.services.compute.model.Instance response = request.execute();
 
@@ -81,38 +87,38 @@ public class Instance {
     }
 
     @GET
-    @Path( "{zone}/{name}/delete" )
-    public String delete(@PathParam( "zone" ) String zone, @PathParam( "name" ) String name){
-       String res = null;
-       try {
-           GoogleCredentials credentials = Helper.getGoogleCredentials();
-           httpTransport = GoogleNetHttpTransport.newTrustedTransport();
-           HttpRequestInitializer requestInitializer = new HttpCredentialsAdapter( credentials );
+    @Path("{zone}/{name}/delete")
+    public String delete(@PathParam("zone") String zone, @PathParam("name") String name) {
+        String res = null;
+        try {
+            GoogleCredentials credentials = Helper.getGoogleCredentials();
+            httpTransport = GoogleNetHttpTransport.newTrustedTransport();
+            HttpRequestInitializer requestInitializer = new HttpCredentialsAdapter( credentials );
 
-           // Create Compute Engine object for listing instances.
-           Compute compute =
-                   new Compute.Builder(httpTransport, JSON_FACTORY, requestInitializer)
-                           .setApplicationName(APPLICATION_NAME)
-                           .build();
+            // Create Compute Engine object for listing instances.
+            Compute compute =
+                    new Compute.Builder( httpTransport, JSON_FACTORY, requestInitializer )
+                            .setApplicationName( APPLICATION_NAME )
+                            .build();
 
-           Compute.Instances.Delete request = compute.instances().delete( PROJECT_ID, zone, name );
+            Compute.Instances.Delete request = compute.instances().delete( PROJECT_ID, zone, name );
 
-           Operation response = request.execute();
+            Operation response = request.execute();
 
-           res = response.getStatus();
+            res = response.getStatus();
 
-       } catch (GeneralSecurityException e) {
-           e.printStackTrace();
-       } catch (IOException e) {
-           e.printStackTrace();
-       }
+        } catch (GeneralSecurityException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-       return res;
+        return res;
     }
 
     @GET
     @Path("{zone}/{name}/start")
-    public String start(@PathParam( "zone" ) String zone, @PathParam("name") String name) {
+    public String start(@PathParam("zone") String zone, @PathParam("name") String name) {
 
         String found = null;
 
@@ -120,15 +126,15 @@ public class Instance {
 
             GoogleCredentials credentials = Helper.getGoogleCredentials();
             httpTransport = GoogleNetHttpTransport.newTrustedTransport();
-            HttpRequestInitializer requestInitializer = new HttpCredentialsAdapter(credentials);
+            HttpRequestInitializer requestInitializer = new HttpCredentialsAdapter( credentials );
 
             // Create Compute Engine object for listing instances.
             Compute compute =
-                    new Compute.Builder(httpTransport, JSON_FACTORY, requestInitializer)
-                            .setApplicationName(APPLICATION_NAME)
+                    new Compute.Builder( httpTransport, JSON_FACTORY, requestInitializer )
+                            .setApplicationName( APPLICATION_NAME )
                             .build();
 
-            Compute.Instances.Start request = compute.instances().start(PROJECT_ID,zone, name);
+            Compute.Instances.Start request = compute.instances().start( PROJECT_ID, zone, name );
 
 
             Operation response = request.execute();
@@ -143,9 +149,10 @@ public class Instance {
 
         return found;
     }
+
     @GET
     @Path("{zone}/{name}/stop")
-    public String stop(@PathParam( "zone" ) String zone, @PathParam("name") String name) {
+    public String stop(@PathParam("zone") String zone, @PathParam("name") String name) {
 
         String found = null;
 
@@ -153,15 +160,15 @@ public class Instance {
 
             GoogleCredentials credentials = Helper.getGoogleCredentials();
             httpTransport = GoogleNetHttpTransport.newTrustedTransport();
-            HttpRequestInitializer requestInitializer = new HttpCredentialsAdapter(credentials);
+            HttpRequestInitializer requestInitializer = new HttpCredentialsAdapter( credentials );
 
             // Create Compute Engine object for listing instances.
             Compute compute =
-                    new Compute.Builder(httpTransport, JSON_FACTORY, requestInitializer)
-                            .setApplicationName(APPLICATION_NAME)
+                    new Compute.Builder( httpTransport, JSON_FACTORY, requestInitializer )
+                            .setApplicationName( APPLICATION_NAME )
                             .build();
 
-            Compute.Instances.Stop request = compute.instances().stop(PROJECT_ID,zone, name);
+            Compute.Instances.Stop request = compute.instances().stop( PROJECT_ID, zone, name );
 
             Operation response = request.execute();
 
@@ -177,34 +184,38 @@ public class Instance {
     }
 
     @POST
-    @Path( "model/inst" )
+    @Path("model/inst")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public String posting(ZukenInstance[] instance){
+    public String posting(ZukenInstance[] instance) {
         String name = null;
-        for (int i = 0; i <= instance.length -1; i++) {
-            System.out.println(instance[i].getName());
-            name = name + instance[i].getName();
+        boolean diskCreated = false;
+        try {
+            for (int i = 0; i <= instance.length - 1; i++) {
+
+                Disk.create( instance[i].getZone(), instance[i].getTemplate(), instance[i].getName() );
+
+                while (!diskCreated) {
+                    diskCreated = Disk.statusCreated( instance[i].getZone(), instance[i].getTemplate(), instance[i].getName() );
+                    TimeUnit.SECONDS.sleep( 5 );
+                    System.out.println( "Disk: " + instance[i].getName() + " not yet created" );
+                }
+
+                System.out.println( "Disk: " + instance[i].getName() + " created" );
+
+
+//                com.google.api.services.compute.model.Instance requestInstance = new com.google.api.services.compute.model.Instance();
+
+            }
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
+
+
         return name;
     }
 
-
-//    public String create(@PathParam( "zone" ) String zone, String name){
-//        String created = null;
-//
-//        try {
-//            GoogleCredentials credentials = Helper.getGoogleCredentials();
-//            httpTransport = GoogleNetHttpTransport.newTrustedTransport();
-//            HttpRequestInitializer requestInitializer = new HttpCredentialsAdapter(credentials);
-//
-//             Create Compute Engine object for listing instances.
-//            Compute compute =
-//                    new Compute.Builder(httpTransport, JSON_FACTORY, requestInitializer)
-//                            .setApplicationName(APPLICATION_NAME)
-//                            .build();
-//        }
-//    }
 
 //    private static void createInstance(Compute computeService) throws IOException, InterruptedException {
 

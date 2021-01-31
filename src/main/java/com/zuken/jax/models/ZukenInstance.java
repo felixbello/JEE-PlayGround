@@ -5,14 +5,16 @@ public class ZukenInstance {
     private String name;
     private String status;
     private String zone;
+    private String template;
 
     public ZukenInstance() {
     }
 
-    public ZukenInstance(String name, String status, String zone) {
+    public ZukenInstance(String name, String status, String zone, String template) {
         this.name = name;
         this.status = status;
         this.zone = zone;
+        this.template = template;
     }
 
     // Getter
@@ -28,6 +30,10 @@ public class ZukenInstance {
         return this.zone;
     }
 
+    public String getTemplate(){
+        return this.template;
+    }
+
     // Setter
     public void setName(String name) {
         this.name = name;
@@ -39,5 +45,9 @@ public class ZukenInstance {
 
     public void setZone(String zone) {
         this.zone = zone;
+    }
+
+    public void setTemplate(String template){
+        this.template = template;
     }
 }

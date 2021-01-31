@@ -19,29 +19,64 @@ import javax.ws.rs.core.MediaType;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 
-@Path( "disk" )
+@Path("disk")
 public class Disk {
 
     private static HttpTransport httpTransport;
     private static final String APPLICATION_NAME = "";
-    /** Set PROJECT_ID to your Project ID from the Overview pane in the Developers console. */
+    /**
+     * Set PROJECT_ID to your Project ID from the Overview pane in the Developers console.
+     */
     private static final String PROJECT_ID = "online-school-labs";
 
-    /** Set Compute Engine zone. */
+    /**
+     * Set Compute Engine zone.
+     */
     private static final String ZONE_NAME = "europe-west6-a";
 
-    /** Global instance of the JSON factory. */
+    /**
+     * Global instance of the JSON factory.
+     */
     private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
 
+
     @GET
-    public String disk(@Context HttpHeaders http){
+    public String disk(@Context HttpHeaders http) {
         return "Disk Servlet Up and Running";
+    }
+
+    public static boolean statusCreated(String zone, String template, String name) {
+        boolean created = false;
+        try {
+            GoogleCredentials credentials = Helper.getGoogleCredentials();
+            httpTransport = GoogleNetHttpTransport.newTrustedTransport();
+            HttpRequestInitializer requestInitializer = new HttpCredentialsAdapter( credentials );
+
+            // Create Compute Engine object for listing instances.
+            Compute compute =
+                    new Compute.Builder( httpTransport, JSON_FACTORY, requestInitializer )
+                            .setApplicationName( APPLICATION_NAME )
+                            .build();
+
+            Compute.Disks.Get request = compute.disks().get( PROJECT_ID, zone, name );
+
+            com.google.api.services.compute.model.Disk response = request.execute();
+            if (response.getStatus().equals( "READY" )){
+                created = true;
+            }
+
+        } catch (GeneralSecurityException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return created;
     }
 
     @GET
     @Path("{zone}/{name}")
     @Produces(MediaType.APPLICATION_JSON)
-    public boolean exists(@PathParam( "zone" ) String zone,@PathParam("name") String name ){
+    public boolean exists(@PathParam("zone") String zone, @PathParam("name") String name) {
 
         boolean exists = false;
 
@@ -49,29 +84,69 @@ public class Disk {
 
             GoogleCredentials credentials = Helper.getGoogleCredentials();
             httpTransport = GoogleNetHttpTransport.newTrustedTransport();
-            HttpRequestInitializer requestInitializer = new HttpCredentialsAdapter(credentials);
+            HttpRequestInitializer requestInitializer = new HttpCredentialsAdapter( credentials );
 
             // Create Compute Engine object for listing instances.
             Compute compute =
-                    new Compute.Builder(httpTransport, JSON_FACTORY, requestInitializer)
-                            .setApplicationName(APPLICATION_NAME)
+                    new Compute.Builder( httpTransport, JSON_FACTORY, requestInitializer )
+                            .setApplicationName( APPLICATION_NAME )
                             .build();
 
-            Compute.Disks.Get diskRequest = compute.disks().get(PROJECT_ID, zone, name);
+            Compute.Disks.Get diskRequest = compute.disks().get( PROJECT_ID, zone, name );
 
             com.google.api.services.compute.model.Disk diskResponse = diskRequest.execute();
 
         } catch (GeneralSecurityException e) {
-            if (e.getMessage().contains( "not found" )){
+            if (e.getMessage().contains( "not found" )) {
                 exists = true;
             }
         } catch (IOException e) {
-            if (e.getMessage().contains( "not found" ) ){
+            if (e.getMessage().contains( "not found" )) {
                 exists = true;
             }
         }
 
         return exists;
+    }
+
+    @GET
+    @Path("{zone}/{template}/{name}/insert")
+    public static String create(@PathParam("zone") String zone, @PathParam("template") String template, @PathParam("name") String name) {
+        String status = null;
+
+        try {
+
+            GoogleCredentials credentials = Helper.getGoogleCredentials();
+            httpTransport = GoogleNetHttpTransport.newTrustedTransport();
+            HttpRequestInitializer requestInitializer = new HttpCredentialsAdapter( credentials );
+
+            // Create Compute Engine object for listing instances.
+            Compute compute =
+                    new Compute.Builder( httpTransport, JSON_FACTORY, requestInitializer )
+                            .setApplicationName( APPLICATION_NAME )
+                            .build();
+
+            com.google.api.services.compute.model.Disk requestBody = new com.google.api.services.compute.model.Disk();
+            requestBody.setName( name );
+            requestBody.setSourceSnapshot( "projects/online-school-labs/global/snapshots/" + template );
+            requestBody.setSizeGb( 500L );
+            requestBody.setType( "projects/online-school-labs/zones/" + zone + "/diskTypes/pd-standard" );
+            requestBody.setZone( "projects/online-school-labs/zones/" + zone );
+
+            Compute.Disks.Insert request = compute.disks().insert( PROJECT_ID, zone, requestBody );
+
+            Operation response = request.execute();
+
+            status = response.getStatus();
+
+        } catch (GeneralSecurityException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        return status;
     }
 
 //    @GET
