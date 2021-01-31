@@ -214,7 +214,7 @@ public class Instance {
 
                 com.google.api.services.compute.model.Instance requestInstanceBody = new com.google.api.services.compute.model.Instance();
 
-                requestInstanceBody.setName( name );
+                requestInstanceBody.setName( instance[i].getName() );
                 requestInstanceBody.setMachineType( "projects/online-school-labs/zones/" + instance[i].getZone() + "/machineTypes/e2-standard-8" );
                 requestInstanceBody.setZone( "projects/online-school-labs/zones/" + instance[i].getZone() );
 
