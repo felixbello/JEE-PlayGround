@@ -1,7 +1,13 @@
-com/zuken/jax/resources/Instance.class
 com/zuken/jax/DevelopersResource.class
+com/zuken/jax/resources/Regions.class
+com/zuken/jax/resources/Snapshots.class
+com/zuken/jax/Helper.class
+com/zuken/jax/resources/Disk.class
+com/zuken/jax/resources/Zone$1.class
+com/zuken/jax/resources/Instances.class
+com/zuken/jax/resources/Instance.class
+com/zuken/jax/resources/Zones.class
 com/zuken/jax/models/ZukenInstance.class
 com/zuken/jax/JAXRSConfiguration.class
-com/zuken/jax/Helper.class
+com/zuken/jax/resources/Zone.class
 com/zuken/jax/Developer.class
-com/zuken/jax/resources/Instances.class
