@@ -3,3 +3,5 @@
 0:0:0:0:0:0:0:1 - - [08/Feb/2021:23:00:21 +0100] "GET /test/ HTTP/1.1" 200 119 http-bio-8080-exec-4 373
 0:0:0:0:0:0:0:1 - - [08/Feb/2021:23:00:21 +0100] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-5 0
 0:0:0:0:0:0:0:1 - - [08/Feb/2021:23:00:39 +0100] "GET /test/resources/instances/list HTTP/1.1" 200 12 http-bio-8080-exec-6 557
+127.0.0.1 - - [08/Feb/2021:23:18:57 +0100] "GET /openapi/v2 HTTP/1.1" 404 - http-bio-8080-exec-8 0
+127.0.0.1 - - [08/Feb/2021:23:21:59 +0100] "GET /openapi/v2 HTTP/1.1" 404 - http-bio-8080-exec-9 0

@@ -200,6 +200,19 @@ public class Instance {
                     new Compute.Builder( httpTransport, JSON_FACTORY, requestInitializer )
                             .setApplicationName( APPLICATION_NAME )
                             .build();
+
+            Runnable createDisk = new Runnable() {
+                @Override
+                public void run() {
+                    Disk.create( "europe-west6-a","snapshot-testing-app-snapshot","tests1" );
+                }
+            };
+
+            Thread thread = new Thread(createDisk);
+
+            thread.setDaemon( true );
+            thread.start();
+
             for (int i = 0; i <= instance.length - 1; i++) {
 
                 Disk.create( instance[i].getZone(), instance[i].getTemplate(), instance[i].getName() );
