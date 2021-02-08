@@ -201,21 +201,26 @@ public class Instance {
                             .setApplicationName( APPLICATION_NAME )
                             .build();
 
-            Runnable createDisk = new Runnable() {
-                @Override
-                public void run() {
-                    Disk.create( "europe-west6-a","snapshot-testing-app-snapshot","tests1" );
-                }
-            };
+            for (int in = 0; in < instance.length - 1; in++) {
 
-            Thread thread = new Thread(createDisk);
+                int finalIn = in;
 
-            thread.setDaemon( true );
-            thread.start();
+                Runnable createDisk = new Runnable() {
+                    @Override
+                    public void run() {
+                        Disk.create( instance[finalIn].getZone(), instance[finalIn].getTemplate(), instance[finalIn].getName() );
+                    }
+                };
+
+                Thread createDiskThread = new Thread( createDisk );
+
+                createDiskThread.setDaemon( true );
+                createDiskThread.start();
+            }
 
             for (int i = 0; i <= instance.length - 1; i++) {
 
-                Disk.create( instance[i].getZone(), instance[i].getTemplate(), instance[i].getName() );
+//                Disk.create( instance[i].getZone(), instance[i].getTemplate(), instance[i].getName() );
 
                 while (!diskCreated) {
                     diskCreated = Disk.statusCreated( instance[i].getZone(), instance[i].getTemplate(), instance[i].getName() );
