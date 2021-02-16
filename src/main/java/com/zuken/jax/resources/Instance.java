@@ -201,18 +201,6 @@ public class Instance {
                             .setApplicationName( APPLICATION_NAME )
                             .build();
 
-            Runnable createDisk = new Runnable() {
-                @Override
-                public void run() {
-                    Disk.create( "europe-west6-a","snapshot-testing-app-snapshot","tests1" );
-                }
-            };
-
-            Thread thread = new Thread(createDisk);
-
-            thread.setDaemon( true );
-            thread.start();
-
             for (int i = 0; i <= instance.length - 1; i++) {
 
                 Disk.create( instance[i].getZone(), instance[i].getTemplate(), instance[i].getName() );
@@ -275,7 +263,6 @@ public class Instance {
             e.printStackTrace();
         }
 
-
         return name;
     }
 
@@ -289,21 +276,21 @@ public class Instance {
 
             requestAddress.setName( name );
             Compute.Addresses.Insert request = compute.addresses().insert( PROJECT_ID, region, requestAddress );
-            System.out.println("Try to create network");
+            System.out.println( "Try to create network" );
             Operation response = request.execute();
 
             while (!created) {
                 created = checkFixedIPCreated( compute, PROJECT_ID, region, name );
                 TimeUnit.SECONDS.sleep( 3 );
             }
-            System.out.println("Network should be created");
+            System.out.println( "Network should be created" );
 
             Compute.Addresses.Get reqAdd = compute.addresses().get( PROJECT_ID, region, name );
             Address respAdd = reqAdd.execute();
 
             ipAddress = respAdd.getAddress();
 
-            System.out.println("Network created: " + ipAddress);
+            System.out.println( "Network created: " + ipAddress );
 
         } catch (IOException e) {
             e.printStackTrace();
