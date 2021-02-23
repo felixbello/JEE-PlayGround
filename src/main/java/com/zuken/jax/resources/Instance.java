@@ -201,7 +201,16 @@ public class Instance {
                             .setApplicationName( APPLICATION_NAME )
                             .build();
 
+            System.out.println("**********************************");
+            System.out.println("Got Request!!");
+            System.out.println("**********************************");
+            System.out.println("Size: " + instance.length);
+
             for (int i = 0; i <= instance.length - 1; i++) {
+
+                System.out.println("Name: " + instance[i].getName());
+                System.out.println("Zone: " + instance[i].getZone());
+                System.out.println("Template: " + instance[i].getTemplate());
 
                 Disk.create( instance[i].getZone(), instance[i].getTemplate(), instance[i].getName() );
 
