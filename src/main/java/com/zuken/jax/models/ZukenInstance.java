@@ -7,6 +7,7 @@ public class ZukenInstance {
     private String zone;
     private String country;
     private String template;
+    private String address;
 
     public ZukenInstance() {
     }
@@ -39,6 +40,9 @@ public class ZukenInstance {
     public String getTemplate() {
         return this.template;
     }
+    public String getAddress(){
+        return this.address;
+    }
 
     // Setter
     public void setName(String name) {
@@ -59,5 +63,8 @@ public class ZukenInstance {
 
     public void setTemplate(String template) {
         this.template = template;
+    }
+    public void setAddress(String address){
+        this.address = address;
     }
 }

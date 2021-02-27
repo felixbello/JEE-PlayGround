@@ -83,6 +83,7 @@ public class Instances {
                             zukenInstance.setName( instance.getName() );
                             zukenInstance.setStatus( instance.getStatus() );
                             zukenInstance.setZone( instance.getZone() );
+                            zukenInstance.setCountry(getRegionFromZone(instance.getZone()));
                             instancesList.add( zukenInstance );
                         }
                     }
@@ -95,6 +96,14 @@ public class Instances {
         }
 
         return instancesList;
+    }
+
+    private String getRegionFromZone(String zone) {
+        String region = null;
+
+
+
+        return region;
     }
 
     @GET

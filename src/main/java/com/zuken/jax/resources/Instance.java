@@ -101,11 +101,28 @@ public class Instance {
                             .setApplicationName( APPLICATION_NAME )
                             .build();
 
+            System.out.println("**********************");
+            System.out.println("Instance should be going to be deleted");
             Compute.Instances.Delete request = compute.instances().delete( PROJECT_ID, zone, name );
 
             Operation response = request.execute();
+            System.out.println("Instace should be deleted");
 
-            res = response.getStatus();
+            System.out.println("Get the Instance");
+            ZukenInstance zukenInstance = get( zone, name );
+            System.out.println(zukenInstance.getName() + zukenInstance.getZone()+ zukenInstance.getAddress());
+
+            System.out.println("prepare region");
+            String region = zukenInstance.getZone().substring( 0, zukenInstance.getZone().lastIndexOf( "-" ));
+            System.out.println(region);
+            System.out.println("prepared");
+
+            System.out.println("prepare to delete Address");
+            Compute.Addresses.Delete requestDeleteAddress = compute.addresses().delete( PROJECT_ID, region, zukenInstance.getAddress());
+            Operation responseDelete = requestDeleteAddress.execute();
+            System.out.println("address should be deleted");
+
+            res = response.getStatus() + " *** " + responseDelete.getStatus();
 
         } catch (GeneralSecurityException e) {
             e.printStackTrace();
@@ -116,9 +133,11 @@ public class Instance {
         return res;
     }
 
-    @GET
-    @Path( "{region}/{address}/dA" )
-    public String deleteNetwork(@PathParam( "region" ) String region, @PathParam( "address" ) String address){
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path( "/dA" )
+    public String deleteNetwork(ZukenInstance zukenInstance){
        String res = null;
        try {
            GoogleCredentials credentials = Helper.getGoogleCredentials();
@@ -131,11 +150,11 @@ public class Instance {
                            .setApplicationName( APPLICATION_NAME )
                            .build();
 
-           Compute.Addresses.Delete requestDelete = compute.addresses().delete(PROJECT_ID, region, address);
+//           Compute.Addresses.Delete requestDelete = compute.addresses().delete(PROJECT_ID, zukenInstance.getCountry(), zukenInstance.ge);
 
-           Operation responseDelete = requestDelete.execute();
+//           Operation responseDelete = requestDelete.execute();
 
-           res = responseDelete.getStatus() + " *** " + responseDelete.getStatus();
+//           res = responseDelete.getStatus() + " *** " + responseDelete.getStatus();
        }catch (Exception e){
            e.printStackTrace();
            res = "error...";
