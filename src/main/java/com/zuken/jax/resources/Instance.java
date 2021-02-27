@@ -101,26 +101,34 @@ public class Instance {
                             .setApplicationName( APPLICATION_NAME )
                             .build();
 
-            System.out.println("**********************");
-            System.out.println("Instance should be going to be deleted");
+            System.out.println( "**********************" );
+            System.out.println( "Instance should be going to be deleted" );
             Compute.Instances.Delete request = compute.instances().delete( PROJECT_ID, zone, name );
 
             Operation response = request.execute();
-            System.out.println("Instace should be deleted");
+            System.out.println( "Instace should be deleted" );
 
-            System.out.println("Get the Instance");
-            ZukenInstance zukenInstance = get( zone, name );
-            System.out.println(zukenInstance.getName() + zukenInstance.getZone()+ zukenInstance.getAddress());
+            System.out.println( "prepare region" );
 
-            System.out.println("prepare region");
-            String region = zukenInstance.getZone().substring( 0, zukenInstance.getZone().lastIndexOf( "-" ));
-            System.out.println(region);
-            System.out.println("prepared");
+            String region = null;
 
-            System.out.println("prepare to delete Address");
-            Compute.Addresses.Delete requestDeleteAddress = compute.addresses().delete( PROJECT_ID, region, zukenInstance.getAddress());
+            System.out.println(zone);
+
+            if (zone.contains( "/" )) {
+                region = zone.substring( zone.lastIndexOf( "/" ), zone.lastIndexOf( "-" ) );
+            } else if (zone.contains( "a" ) || zone.contains( "b" ) || zone.contains( "c" )) {
+                region = zone.substring( 0, zone.lastIndexOf( "-" ) );
+            } else {
+                region = zone;
+            }
+
+            System.out.println( region );
+            System.out.println( "prepared" );
+
+            System.out.println( "prepare to delete Address" );
+            Compute.Addresses.Delete requestDeleteAddress = compute.addresses().delete( PROJECT_ID, region, name);
             Operation responseDelete = requestDeleteAddress.execute();
-            System.out.println("address should be deleted");
+            System.out.println( "address should be deleted" );
 
             res = response.getStatus() + " *** " + responseDelete.getStatus();
 
@@ -131,35 +139,6 @@ public class Instance {
         }
 
         return res;
-    }
-
-    @POST
-    @Produces(MediaType.APPLICATION_JSON)
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Path( "/dA" )
-    public String deleteNetwork(ZukenInstance zukenInstance){
-       String res = null;
-       try {
-           GoogleCredentials credentials = Helper.getGoogleCredentials();
-           httpTransport = GoogleNetHttpTransport.newTrustedTransport();
-           HttpRequestInitializer requestInitializer = new HttpCredentialsAdapter( credentials );
-
-           // Create Compute Engine object for listing instances.
-           Compute compute =
-                   new Compute.Builder( httpTransport, JSON_FACTORY, requestInitializer )
-                           .setApplicationName( APPLICATION_NAME )
-                           .build();
-
-//           Compute.Addresses.Delete requestDelete = compute.addresses().delete(PROJECT_ID, zukenInstance.getCountry(), zukenInstance.ge);
-
-//           Operation responseDelete = requestDelete.execute();
-
-//           res = responseDelete.getStatus() + " *** " + responseDelete.getStatus();
-       }catch (Exception e){
-           e.printStackTrace();
-           res = "error...";
-       }
-       return res;
     }
 
     @GET
@@ -247,16 +226,16 @@ public class Instance {
                             .setApplicationName( APPLICATION_NAME )
                             .build();
 
-            System.out.println("**********************************");
-            System.out.println("Got Request!!");
-            System.out.println("**********************************");
-            System.out.println("Size: " + instance.length);
+            System.out.println( "**********************************" );
+            System.out.println( "Got Request!!" );
+            System.out.println( "**********************************" );
+            System.out.println( "Size: " + instance.length );
 
             for (int i = 0; i <= instance.length - 1; i++) {
 
-                System.out.println("Name: " + instance[i].getName());
-                System.out.println("Zone: " + instance[i].getZone());
-                System.out.println("Template: " + instance[i].getTemplate());
+                System.out.println( "Name: " + instance[i].getName() );
+                System.out.println( "Zone: " + instance[i].getZone() );
+                System.out.println( "Template: " + instance[i].getTemplate() );
 
                 Disk.create( instance[i].getZone(), instance[i].getTemplate(), instance[i].getName() );
 
