@@ -84,6 +84,7 @@ public class Instances {
                             zukenInstance.setStatus( instance.getStatus() );
                             zukenInstance.setZone( instance.getZone() );
                             zukenInstance.setCountry(getRegionFromZone(instance.getZone()));
+                            zukenInstance.setAddress( instance.getNetworkInterfaces().get( 1 ).getNetworkIP() );
                             instancesList.add( zukenInstance );
                         }
                     }
