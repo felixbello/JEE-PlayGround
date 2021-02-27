@@ -117,6 +117,33 @@ public class Instance {
     }
 
     @GET
+    @Path( "{region}/{address}/dA" )
+    public String deleteNetwork(@PathParam( "region" ) String region, @PathParam( "address" ) String address){
+       String res = null;
+       try {
+           GoogleCredentials credentials = Helper.getGoogleCredentials();
+           httpTransport = GoogleNetHttpTransport.newTrustedTransport();
+           HttpRequestInitializer requestInitializer = new HttpCredentialsAdapter( credentials );
+
+           // Create Compute Engine object for listing instances.
+           Compute compute =
+                   new Compute.Builder( httpTransport, JSON_FACTORY, requestInitializer )
+                           .setApplicationName( APPLICATION_NAME )
+                           .build();
+
+           Compute.Addresses.Delete requestDelete = compute.addresses().delete(PROJECT_ID, region, address);
+
+           Operation responseDelete = requestDelete.execute();
+
+           res = responseDelete.getStatus() + " *** " + responseDelete.getStatus();
+       }catch (Exception e){
+           e.printStackTrace();
+           res = "error...";
+       }
+       return res;
+    }
+
+    @GET
     @Path("{zone}/{name}/start")
     public String start(@PathParam("zone") String zone, @PathParam("name") String name) {
 
