@@ -51,7 +51,7 @@ public class Zaddress {
     @GET
     @Path("{region}/list")
     @Produces(MediaType.APPLICATION_JSON)
-    public HashMap<String, String> list(@PathParam( "region" ) String region) {
+    public HashMap<String, String> regionslist(@PathParam( "region" ) String region) {
 
         HashMap<String, String> addresses = new HashMap<String, String>();
 
@@ -81,6 +81,24 @@ public class Zaddress {
             e.printStackTrace();
         }
 
+        return addresses;
+    }
+
+    @GET
+    @Path( "list" )
+    @Produces(MediaType.APPLICATION_JSON)
+    public HashMap<String, String> list(){
+        HashMap<String, String> addresses = new HashMap<>();
+        
+        Regions region = new Regions();
+        HashMap<String, String> regionsList = region.list();
+
+        for (Map.Entry<String, String> reg: regionsList.entrySet()) {
+            HashMap<String, String> tempList = regionslist( reg.getValue() );
+            for (Map.Entry<String, String> teg: tempList.entrySet()) {
+               addresses.put( teg.getKey(), teg.getValue() ) ;
+            }
+        }
         return addresses;
     }
 }
