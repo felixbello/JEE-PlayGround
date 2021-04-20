@@ -238,9 +238,15 @@ public class Instance {
                 String respCreated = Disk.create( instance[i].getZone(), instance[i].getTemplate(), instance[i].getName() );
                 System.out.println("Creation of Disk started " +respCreated);
 
+                int count = 0;
                 while (!diskCreated) {
                     diskCreated = Disk.statusCreated( instance[i].getZone(), instance[i].getTemplate(), instance[i].getName() );
-                    TimeUnit.SECONDS.sleep( 5 );
+                    TimeUnit.SECONDS.sleep( 30);
+                    count++;
+                    if (count > 3){
+                        Disk.create( instance[i].getZone(), instance[i].getTemplate(), instance[i].getName() );
+                        count = 0;
+                    }
                     System.out.println( "Disk: " + instance[i].getName() + " not yet created" );
                 }
 
