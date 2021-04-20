@@ -235,7 +235,8 @@ public class Instance {
                 System.out.println( "Zone: " + instance[i].getZone() );
                 System.out.println( "Template: " + instance[i].getTemplate() );
 
-                Disk.create( instance[i].getZone(), instance[i].getTemplate(), instance[i].getName() );
+                String respCreated = Disk.create( instance[i].getZone(), instance[i].getTemplate(), instance[i].getName() );
+                System.out.println(respCreated);
 
                 while (!diskCreated) {
                     diskCreated = Disk.statusCreated( instance[i].getZone(), instance[i].getTemplate(), instance[i].getName() );

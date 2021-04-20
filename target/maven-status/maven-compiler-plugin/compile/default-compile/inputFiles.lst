@@ -1,3 +1,11 @@
-C:\Users\FelixB\IdeaProjects\JEE\AirHacks-JAX\src\main\java\com\zuken\jax\DevelopersResource.java
-C:\Users\FelixB\IdeaProjects\JEE\AirHacks-JAX\src\main\java\com\zuken\jax\JAXRSConfiguration.java
-C:\Users\FelixB\IdeaProjects\JEE\AirHacks-JAX\src\main\java\com\zuken\jax\Developer.java
+/Users/felix/02-Git/tmp/JEE-PlayGround/src/main/java/com/zuken/jax/resources/Disk.java
+/Users/felix/02-Git/tmp/JEE-PlayGround/src/main/java/com/zuken/jax/resources/Instance.java
+/Users/felix/02-Git/tmp/JEE-PlayGround/src/main/java/com/zuken/jax/resources/Snapshots.java
+/Users/felix/02-Git/tmp/JEE-PlayGround/src/main/java/com/zuken/jax/resources/Zaddress.java
+/Users/felix/02-Git/tmp/JEE-PlayGround/src/main/java/com/zuken/jax/Helper.java
+/Users/felix/02-Git/tmp/JEE-PlayGround/src/main/java/com/zuken/jax/resources/Regions.java
+/Users/felix/02-Git/tmp/JEE-PlayGround/src/main/java/com/zuken/jax/resources/Zones.java
+/Users/felix/02-Git/tmp/JEE-PlayGround/src/main/java/com/zuken/jax/resources/Zone.java
+/Users/felix/02-Git/tmp/JEE-PlayGround/src/main/java/com/zuken/jax/JAXRSConfiguration.java
+/Users/felix/02-Git/tmp/JEE-PlayGround/src/main/java/com/zuken/jax/models/ZukenInstance.java
+/Users/felix/02-Git/tmp/JEE-PlayGround/src/main/java/com/zuken/jax/resources/Instances.java
